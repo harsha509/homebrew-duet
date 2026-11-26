@@ -8,15 +8,15 @@ cask "duet" do
   homepage "https://github.com/harsha509/duet-releases"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Duet.app"
 
   # This build is not notarized, so macOS would refuse to open it while it
   # carries the download quarantine mark.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Duet.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Duet.app"]
   end
 
   zap trash: [
