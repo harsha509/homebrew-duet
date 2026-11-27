@@ -1,6 +1,6 @@
 cask "duet" do
-  version "0.1.4"
-  sha256 "6f13b9e91cf17ef34ec5eec700141b3a3438cf61e29c923fec06c9b6fa635129"
+  version "0.1.5"
+  sha256 "26d0022e3feb857d926832b5132c1282a76dba35390b423c0b758040de722a04"
 
   url "https://github.com/harsha509/duet-releases/releases/download/v#{version}/Duet-#{version}-arm64.dmg"
   name "Duet"
